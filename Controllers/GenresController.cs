@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SpotifyOrganizer.Data;
 using SpotifyOrganizer.Models;
@@ -22,9 +17,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: Genres
         public async Task<IActionResult> Index()
         {
-              return _context.Genres != null ? 
-                          View(await _context.Genres.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Genres'  is null.");
+            return _context.Genres != null ?
+                        View(await _context.Genres.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Genres'  is null.");
         }
 
         // GET: Genres/Details/5
@@ -150,14 +145,14 @@ namespace SpotifyOrganizer.Controllers
             {
                 _context.Genres.Remove(genre);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool GenreExists(int id)
         {
-          return (_context.Genres?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Genres?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
