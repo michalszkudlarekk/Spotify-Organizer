@@ -11,8 +11,8 @@
         public DateTime ReleaseDate { get; set; }
         public DateTime AddDate { get; set; }
 
-        public virtual ICollection<AlbumSong> AlbumSongs { get; set; } = null!;
-        public virtual ICollection<SongGenre> SongGenres { get; set; } = null!;
+        // public virtual ICollection<AlbumSong> AlbumSongs { get; set; } = null!;
+        // public virtual ICollection<SongGenre> SongGenres { get; set; } = null!;
 
     }
 }

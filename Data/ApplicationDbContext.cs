@@ -13,35 +13,35 @@ namespace SpotifyOrganizer.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<UserAlbum>()
-                .HasOne(u => u.SpotifyUser)
-                .WithMany(ua => ua.UserAlbums)
-                .HasForeignKey(ui => ui.UserId);
+            //builder.Entity<UserAlbum>()
+            //.HasOne(u => u.SpotifyUser)
+            //.WithMany(ua => ua.UserAlbums)
+            //  .HasForeignKey(ui => ui.UserId);
+            //
+            // builder.Entity<UserAlbum>()
+            //    .HasOne(u => u.Album)
+            //     .WithMany(ua => ua.UserAlbums)
+            //      .HasForeignKey(ui => ui.AlbumId);
 
-            builder.Entity<UserAlbum>()
-                .HasOne(u => u.Album)
-                .WithMany(ua => ua.UserAlbums)
-                .HasForeignKey(ui => ui.AlbumId);
-
-            builder.Entity<AlbumSong>()
-                .HasOne(u => u.Album)
-                .WithMany(ua => ua.AlbumSongs)
-                .HasForeignKey(ui => ui.AlbumId);
-
-            builder.Entity<AlbumSong>()
-                .HasOne(u => u.Song)
-                .WithMany(ua => ua.AlbumSongs)
-                .HasForeignKey(ui => ui.SongId);
-
-            builder.Entity<SongGenre>()
-                .HasOne(u => u.Song)
-                .WithMany(ua => ua.SongGenres)
-                .HasForeignKey(ui => ui.SongId);
-
-            builder.Entity<SongGenre>()
-                .HasOne(u => u.Genre)
-                .WithMany(ua => ua.SongGenres)
-                .HasForeignKey(ui => ui.GenreId);
+            // builder.Entity<AlbumSong>()
+            //     .HasOne(u => u.Album)s
+            //     .WithMany(ua => ua.AlbumSongs)
+            //     .HasForeignKey(ui => ui.AlbumId);
+            //
+            // builder.Entity<AlbumSong>()
+            //     .HasOne(u => u.Song)
+            //     .WithMany(ua => ua.AlbumSongs)
+            //     .HasForeignKey(ui => ui.SongId);
+            //
+            // builder.Entity<SongGenre>()
+            //     .HasOne(u => u.Song)
+            //     .WithMany(ua => ua.SongGenres)
+            //     .HasForeignKey(ui => ui.SongId);
+            //
+            // builder.Entity<SongGenre>()
+            //     .HasOne(u => u.Genre)
+            //     .WithMany(ua => ua.SongGenres)
+            //     .HasForeignKey(ui => ui.GenreId);
 
             base.OnModelCreating(builder);
         }

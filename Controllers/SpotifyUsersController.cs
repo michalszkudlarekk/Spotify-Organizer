@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SpotifyOrganizer.Data;
 using SpotifyOrganizer.Models;
@@ -17,9 +22,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: SpotifyUsers
         public async Task<IActionResult> Index()
         {
-            return _context.SpotifyUsers != null ?
-                        View(await _context.SpotifyUsers.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.SpotifyUsers'  is null.");
+              return _context.SpotifyUsers != null ? 
+                          View(await _context.SpotifyUsers.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.SpotifyUsers'  is null.");
         }
 
         // GET: SpotifyUsers/Details/5
@@ -145,14 +150,14 @@ namespace SpotifyOrganizer.Controllers
             {
                 _context.SpotifyUsers.Remove(spotifyUser);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool SpotifyUserExists(int id)
         {
-            return (_context.SpotifyUsers?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.SpotifyUsers?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
