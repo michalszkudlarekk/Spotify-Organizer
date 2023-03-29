@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SpotifyOrganizer.Data;
 using SpotifyOrganizer.Models;
@@ -22,9 +17,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: Albums
         public async Task<IActionResult> Index()
         {
-              return _context.Albums != null ? 
-                          View(await _context.Albums.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Albums'  is null.");
+            return _context.Albums != null ?
+                        View(await _context.Albums.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Albums'  is null.");
         }
 
         // GET: Albums/Details/5
@@ -58,7 +53,7 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,AlbumName")] Album album)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(album);
                 await _context.SaveChangesAsync();
@@ -95,7 +90,7 @@ namespace SpotifyOrganizer.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
@@ -150,14 +145,14 @@ namespace SpotifyOrganizer.Controllers
             {
                 _context.Albums.Remove(album);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AlbumExists(int id)
         {
-          return (_context.Albums?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Albums?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
