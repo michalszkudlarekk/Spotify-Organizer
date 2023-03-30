@@ -53,7 +53,7 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,GenreName")] Genre genre)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(genre);
                 await _context.SaveChangesAsync();
@@ -90,7 +90,7 @@ namespace SpotifyOrganizer.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

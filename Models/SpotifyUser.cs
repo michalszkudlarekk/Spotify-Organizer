@@ -9,8 +9,5 @@
 
         public virtual ICollection<UserAlbum> UserAlbums { get; set; } = null!;
 
-        public SpotifyUser()
-        {
-        }
     }
 }

@@ -53,7 +53,7 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,SpotifyId,SongName,Artist,ReleaseDate,AddDate")] Song song)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(song);
                 await _context.SaveChangesAsync();
@@ -90,7 +90,7 @@ namespace SpotifyOrganizer.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

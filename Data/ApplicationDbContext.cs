@@ -14,14 +14,14 @@ namespace SpotifyOrganizer.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<UserAlbum>()
-                .HasOne(u => u.SpotifyUser)
-                .WithMany(ua => ua.UserAlbums)
-                .HasForeignKey(ui => ui.UserId);
+            .HasOne(u => u.SpotifyUser)
+            .WithMany(ua => ua.UserAlbums)
+              .HasForeignKey(ui => ui.UserId);
 
             builder.Entity<UserAlbum>()
-                .HasOne(u => u.Album)
+               .HasOne(u => u.Album)
                 .WithMany(ua => ua.UserAlbums)
-                .HasForeignKey(ui => ui.AlbumId);
+                 .HasForeignKey(ui => ui.AlbumId);
 
             builder.Entity<AlbumSong>()
                 .HasOne(u => u.Album)
