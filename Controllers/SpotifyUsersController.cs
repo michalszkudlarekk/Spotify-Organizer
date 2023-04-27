@@ -53,7 +53,7 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UserName,UserId")] SpotifyUser spotifyUser)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(spotifyUser);
                 await _context.SaveChangesAsync();
