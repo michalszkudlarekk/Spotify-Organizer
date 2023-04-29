@@ -20,10 +20,8 @@ public class SpotifyApiService
 
     public async Task<FullTrack?> SearchTrack(string songName)
     {
-        var request = new SearchRequest(SearchRequest.Types.Track, songName)
-        {
-            Limit = 1
-        };
+        var request = new SearchRequest(SearchRequest.Types.All, songName);
+        request.Limit = 1;
         var searchResponse = await _spotify.Search.Item(request);
         return searchResponse.Tracks.Items?.Count == 0 ? null : searchResponse.Tracks.Items?[0];
     }
