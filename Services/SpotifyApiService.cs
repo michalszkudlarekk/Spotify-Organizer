@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SpotifyAPI.Web;
-using SpotifyOrganizer.Models;
-
+﻿using SpotifyAPI.Web;
 
 namespace SpotifyOrganizer.Services;
 
-
 public class SpotifyApiService
 {
-    private SpotifyClient _spotify;
+    private readonly SpotifyClient _spotify;
 
     public SpotifyApiService()
     {
@@ -24,10 +20,11 @@ public class SpotifyApiService
 
     public async Task<FullTrack?> SearchTrack(string songName)
     {
-        var request = new SearchRequest(SearchRequest.Types.Track,songName);
-        request.Limit = 1;
+        var request = new SearchRequest(SearchRequest.Types.Track, songName)
+        {
+            Limit = 1
+        };
         var searchResponse = await _spotify.Search.Item(request);
-        return searchResponse.Tracks.Items?[0];
+        return searchResponse.Tracks.Items?.Count == 0 ? null : searchResponse.Tracks.Items?[0];
     }
-    
 }

@@ -17,9 +17,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: SpotifyUsers
         public async Task<IActionResult> Index()
         {
-            return _context.SpotifyUsers != null ?
-                        View(await _context.SpotifyUsers.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.SpotifyUsers'  is null.");
+            return _context.SpotifyUsers != null
+                ? View(await _context.SpotifyUsers.ToListAsync())
+                : Problem("Entity set 'ApplicationDbContext.SpotifyUsers'  is null.");
         }
 
         // GET: SpotifyUsers/Details/5
@@ -59,6 +59,7 @@ namespace SpotifyOrganizer.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(spotifyUser);
         }
 
@@ -75,6 +76,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return NotFound();
             }
+
             return View(spotifyUser);
         }
 
@@ -108,8 +110,10 @@ namespace SpotifyOrganizer.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(spotifyUser);
         }
 
@@ -140,6 +144,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.SpotifyUsers'  is null.");
             }
+
             var spotifyUser = await _context.SpotifyUsers.FindAsync(id);
             if (spotifyUser != null)
             {

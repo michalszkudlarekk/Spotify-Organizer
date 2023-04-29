@@ -17,9 +17,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: Albums
         public async Task<IActionResult> Index()
         {
-            return _context.Albums != null ?
-                        View(await _context.Albums.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Albums'  is null.");
+            return _context.Albums != null
+                ? View(await _context.Albums.ToListAsync())
+                : Problem("Entity set 'ApplicationDbContext.Albums'  is null.");
         }
 
         // GET: Albums/Details/5
@@ -59,6 +59,7 @@ namespace SpotifyOrganizer.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(album);
         }
 
@@ -75,6 +76,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return NotFound();
             }
+
             return View(album);
         }
 
@@ -108,8 +110,10 @@ namespace SpotifyOrganizer.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(album);
         }
 
@@ -140,6 +144,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Albums'  is null.");
             }
+
             var album = await _context.Albums.FindAsync(id);
             if (album != null)
             {

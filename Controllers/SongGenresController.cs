@@ -63,6 +63,7 @@ namespace SpotifyOrganizer.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Id", songGenre.GenreId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", songGenre.SongId);
             return View(songGenre);
@@ -81,6 +82,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return NotFound();
             }
+
             ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Id", songGenre.GenreId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", songGenre.SongId);
             return View(songGenre);
@@ -116,8 +118,10 @@ namespace SpotifyOrganizer.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Id", songGenre.GenreId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", songGenre.SongId);
             return View(songGenre);
@@ -152,6 +156,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.SongGenres'  is null.");
             }
+
             var songGenre = await _context.SongGenres.FindAsync(id);
             if (songGenre != null)
             {

@@ -17,9 +17,9 @@ namespace SpotifyOrganizer.Controllers
         // GET: Genres
         public async Task<IActionResult> Index()
         {
-            return _context.Genres != null ?
-                        View(await _context.Genres.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Genres'  is null.");
+            return _context.Genres != null
+                ? View(await _context.Genres.ToListAsync())
+                : Problem("Entity set 'ApplicationDbContext.Genres'  is null.");
         }
 
         // GET: Genres/Details/5
@@ -59,6 +59,7 @@ namespace SpotifyOrganizer.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(genre);
         }
 
@@ -75,6 +76,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return NotFound();
             }
+
             return View(genre);
         }
 
@@ -108,8 +110,10 @@ namespace SpotifyOrganizer.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(genre);
         }
 
@@ -140,6 +144,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Genres'  is null.");
             }
+
             var genre = await _context.Genres.FindAsync(id);
             if (genre != null)
             {

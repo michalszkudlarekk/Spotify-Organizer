@@ -63,6 +63,7 @@ namespace SpotifyOrganizer.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", albumSong.AlbumId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", albumSong.SongId);
             return View(albumSong);
@@ -81,6 +82,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return NotFound();
             }
+
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", albumSong.AlbumId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", albumSong.SongId);
             return View(albumSong);
@@ -116,8 +118,10 @@ namespace SpotifyOrganizer.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", albumSong.AlbumId);
             ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", albumSong.SongId);
             return View(albumSong);
@@ -152,6 +156,7 @@ namespace SpotifyOrganizer.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.AlbumsSong'  is null.");
             }
+
             var albumSong = await _context.AlbumsSong.FindAsync(id);
             if (albumSong != null)
             {
