@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SpotifyOrganizer.Data;
 using SpotifyOrganizer.Models;
+using SpotifyOrganizer.Services;
 
 namespace SpotifyOrganizer.Controllers
 {
@@ -53,6 +54,11 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,SpotifyId,SongName,Artist,ReleaseDate,AddDate")] Song song)
         {
+            
+            var spotifyApiService = new SpotifyApiService();
+            await spotifyApiService.SearchTrack();
+
+            
             if (!ModelState.IsValid)
             {
                 _context.Add(song);
