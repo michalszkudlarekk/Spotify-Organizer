@@ -58,7 +58,7 @@ public class SongsController : Controller
             SpotifyId = track.Id,
             SongName = track.Name,
             Artist = track.Artists[0].Name,
-            ReleaseDate = DateTime.Parse(track.Album.ReleaseDate).Date
+            ReleaseDate = track.Album.ReleaseDate
         };
 
 
