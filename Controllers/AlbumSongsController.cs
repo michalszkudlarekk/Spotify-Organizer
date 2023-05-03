@@ -16,13 +16,20 @@ namespace SpotifyOrganizer.Controllers
         }
 
         // GET: AlbumSongs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            ViewData["CurrentFilter"] = searchString;
+            
            // var applicationDbContext = _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song);
            // return View(await applicationDbContext.ToListAsync());
-           var albumsongs = from s in _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song) select s;
-           albumsongs = albumsongs.OrderByDescending(s => s.Album.AlbumName);
-           return View(await albumsongs.AsNoTracking().ToListAsync());
+           var albumSongs = from s in _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song) select s;
+           albumSongs = albumSongs.OrderByDescending(s => s.Album.AlbumName);
+           if (!String.IsNullOrEmpty(searchString))
+           {
+               albumSongs = albumSongs.Where(s => s.Album.AlbumName.Contains(searchString)
+                                                  || s.Song.SongName.Contains(searchString));
+           }
+           return View(await albumSongs.AsNoTracking().ToListAsync());
         }
 
         // GET: AlbumSongs/Details/5
