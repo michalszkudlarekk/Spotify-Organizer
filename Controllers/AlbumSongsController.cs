@@ -18,8 +18,11 @@ namespace SpotifyOrganizer.Controllers
         // GET: AlbumSongs
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song);
-            return View(await applicationDbContext.ToListAsync());
+           // var applicationDbContext = _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song);
+           // return View(await applicationDbContext.ToListAsync());
+           var albumsongs = from s in _context.AlbumsSong.Include(a => a.Album).Include(a => a.Song) select s;
+           albumsongs = albumsongs.OrderByDescending(s => s.Album.AlbumName);
+           return View(await albumsongs.AsNoTracking().ToListAsync());
         }
 
         // GET: AlbumSongs/Details/5
