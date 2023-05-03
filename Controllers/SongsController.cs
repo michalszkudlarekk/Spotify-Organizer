@@ -16,11 +16,38 @@ public class SongsController : Controller
     }
 
     // GET: Songs
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string sortOrder)
     {
-        return _context.Songs != null
-            ? View(await _context.Songs.ToListAsync())
-            : Problem("Entity set 'ApplicationDbContext.Songs'  is null.");
+        ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+        ViewData["ArtistSortParm"] = sortOrder == "Artist" ? "artist_desc" : "Artist";
+        var songs = from s in _context.Songs select s;
+        switch (sortOrder)
+        {
+            case "name_desc":
+                songs = songs.OrderByDescending(s => s.SongName);
+                break;
+            case "Date":
+                songs = songs.OrderBy(s => s.ReleaseDate);
+                break;
+            case "date_desc":
+                songs = songs.OrderByDescending(s => s.ReleaseDate);
+                break;
+            case "Artist":
+                songs = songs.OrderBy(s => s.Artist);
+                break;
+            case "artist_desc":
+                songs = songs.OrderByDescending(s => s.Artist);
+                break;
+            default:
+                songs = songs.OrderBy(s => s.SongName);
+                break;
+        }
+
+        return View(await songs.AsNoTracking().ToListAsync());
+        // return _context.Songs != null
+        //   ? View(await _context.Songs.ToListAsync())
+        //  : Problem("Entity set 'ApplicationDbContext.Songs'  is null.");
     }
 
     // GET: Songs/Details/5
