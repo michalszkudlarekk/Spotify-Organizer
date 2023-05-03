@@ -62,6 +62,8 @@ namespace SpotifyOrganizer.Controllers
         {
             if (!ModelState.IsValid)
             {
+                var existingAlbumSong = await _context.AlbumsSong.FirstOrDefaultAsync(s => s.SongId==albumSong.SongId && s.AlbumId==albumSong.AlbumId);
+                if(existingAlbumSong != null) return RedirectToAction(nameof(Index));
                 _context.Add(albumSong);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
