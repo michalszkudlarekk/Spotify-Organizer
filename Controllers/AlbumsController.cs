@@ -55,6 +55,10 @@ namespace SpotifyOrganizer.Controllers
         {
             if (!ModelState.IsValid)
             {
+                
+                var existingAlbum = await _context.Albums.FirstOrDefaultAsync(a => a.AlbumName == album.AlbumName);
+                if (existingAlbum != null) return RedirectToAction(nameof(Index));
+                
                 _context.Add(album);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

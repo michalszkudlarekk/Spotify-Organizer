@@ -53,6 +53,10 @@ public class SongsController : Controller
         var track = await spotifyApiService.SearchTrack(trackName);
 
         if (track == null) return NotFound();
+        
+        var existingSong = await _context.Songs.FirstOrDefaultAsync(s => s.SpotifyId == track.Id);
+        if (existingSong != null) return RedirectToAction(nameof(Index));
+        
         var song = new Song
         {
             SpotifyId = track.Id,
@@ -60,7 +64,7 @@ public class SongsController : Controller
             Artist = track.Artists[0].Name,
             ReleaseDate = track.Album.ReleaseDate
         };
-
+        
 
         if (ModelState.IsValid) return View(song);
         _context.Add(song);
