@@ -252,16 +252,8 @@ namespace SpotifyOrganizer.Data.Migrations
                     b.Property<int>("AlbumId")
                         .HasColumnType("int");
 
-                    b.Property<string>("AlbumName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("SongId")
                         .HasColumnType("int");
-
-                    b.Property<string>("SongName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
