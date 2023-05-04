@@ -1,11 +1,56 @@
+
+:root{
+  --bg-color:#121212;
+  --text-color:#F5F5F5;
+  --link-color:#1db954;
+}
+
 html {
   font-size: 14px;
+  background-color: var(--bg-color);
 }
+
+body {
+  background-color: var(--bg-color) ;
+  color: var(--text-color);
+}
+
+.table {
+  color: var(--text-color);
+}
+
+input, .btn {
+  border: solid 1px var(--text-color);
+  color: var(--text-color);;
+  border-radius: 3px;
+  background-color: var(--link-color);;
+  height: 80%;
+  
+}
+
+p {
+  align-content: center;
+}
+
+.btn{
+  padding: 1px 2px;
+  color: var(--bg-color);
+}
+
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+a{
+  color: var(--link-color);
+  
+}
+
+a:hover{
+text-decoration: none;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {

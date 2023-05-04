@@ -1,6 +1,6 @@
 ﻿namespace SpotifyOrganizer.Models
 {
-    public class Song
+    public sealed class Song
     {
         public int Id { get; set; }
 
@@ -10,7 +10,7 @@
         public string ReleaseDate { get; set; } = null!;
         
         
-        public virtual ICollection<AlbumSong> AlbumSongs { get; set; } = null!;
-        public virtual ICollection<SongGenre> SongGenres { get; set; } = null!;
+        public ICollection<AlbumSong> AlbumSongs { get; set; } = null!;
+        public ICollection<SongGenre> SongGenres { get; set; } = null!;
     }
 }

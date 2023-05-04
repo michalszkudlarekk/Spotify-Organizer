@@ -53,18 +53,14 @@ namespace SpotifyOrganizer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,AlbumName")] Album album)
         {
-            if (!ModelState.IsValid)
-            {
+            if (ModelState.IsValid) return View(album);
+            var existingAlbum = await _context.Albums.FirstOrDefaultAsync(a => a.AlbumName == album.AlbumName);
+            if (existingAlbum != null) return RedirectToAction(nameof(Index));
                 
-                var existingAlbum = await _context.Albums.FirstOrDefaultAsync(a => a.AlbumName == album.AlbumName);
-                if (existingAlbum != null) return RedirectToAction(nameof(Index));
-                
-                _context.Add(album);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            _context.Add(album);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
 
-            return View(album);
         }
 
         // GET: Albums/Edit/5
@@ -96,29 +92,26 @@ namespace SpotifyOrganizer.Controllers
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid) return View(album);
+            try
             {
-                try
+                _context.Update(album);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AlbumExists(album.Id))
                 {
-                    _context.Update(album);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!AlbumExists(album.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-
-                return RedirectToAction(nameof(Index));
             }
 
-            return View(album);
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Albums/Delete/5
