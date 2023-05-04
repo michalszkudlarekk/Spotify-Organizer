@@ -6,6 +6,12 @@ using SpotifyOrganizer.Models;
 
 namespace SpotifyOrganizer.Controllers
 {
+    /// <summary>
+    /// Class <c>AlbumSongsController</c> is responsible for handling group-related actions in the application.
+    /// It depends on the ApplicationDbContext, which manages the database context.
+    /// Contains the following action methods: Index, Details, Create, Edit, and Delete and handle their exceptions.
+    /// It connects Song and Album tables in the database and functions as adding songs to albums. 
+    /// </summary>
     public class AlbumSongsController : Controller
     {
         private readonly ApplicationDbContext _context;

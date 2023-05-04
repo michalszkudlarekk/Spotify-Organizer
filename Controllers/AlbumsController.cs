@@ -5,6 +5,12 @@ using SpotifyOrganizer.Models;
 
 namespace SpotifyOrganizer.Controllers
 {
+    /// <summary>
+    /// Class <c>AlbumsController</c> is responsible for handling requests related to albums in the Spotify Organizer application.
+    /// It depends on the ApplicationDbContext class, which represents the database context.
+    /// Contains the following action methods: Index, Details, Create, Edit, and Delete and handles their exceptions.
+    /// It also implements a search function.
+    /// </summary>
     public class AlbumsController : Controller
     {
         private readonly ApplicationDbContext _context;

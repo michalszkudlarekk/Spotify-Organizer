@@ -33,6 +33,11 @@ input, .btn{
   height: 80%;
 }
 
+input:focus{
+  background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
 p {
   align-content: center;
 }

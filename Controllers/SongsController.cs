@@ -6,6 +6,13 @@ using SpotifyOrganizer.Services;
 
 namespace SpotifyOrganizer.Controllers;
 
+/// <summary>
+/// Class <c>SongsController</c> is responsible for handling requests related to songs in the Spotify Organizer application.
+/// It depends on the ApplicationDbContext class, which represents the database context.
+/// Contains the following action methods: Index, Details, Create, Edit, and Delete and handles their exceptions.
+/// It also implements a sorting function. Sort can be done by song name, release date, and artist name.
+/// </summary>
+
 public class SongsController : Controller
 {
     private readonly ApplicationDbContext _context;
