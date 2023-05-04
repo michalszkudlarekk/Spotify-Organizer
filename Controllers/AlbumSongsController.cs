@@ -55,8 +55,8 @@ namespace SpotifyOrganizer.Controllers
         // GET: AlbumSongs/Create
         public IActionResult Create()
         {
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id");
-            ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id");
+            ViewData["Album"] = new SelectList(_context.Albums, "Id", "AlbumName");
+            ViewData["Song"] = new SelectList(_context.Songs, "Id", "SongName");
             return View();
         }
 
@@ -76,8 +76,8 @@ namespace SpotifyOrganizer.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", albumSong.AlbumId);
-            ViewData["SongId"] = new SelectList(_context.Songs, "Id", "Id", albumSong.SongId);
+            ViewData["Album"] = new SelectList(_context.Albums, "Id", "AlbumName");
+            ViewData["Song"] = new SelectList(_context.Songs, "Id", "SongName");
             return View(albumSong);
         }
 
