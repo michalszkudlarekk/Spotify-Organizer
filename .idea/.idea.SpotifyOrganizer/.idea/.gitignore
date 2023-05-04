@@ -2,9 +2,9 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.SpotifyOrganizer.iml
 /modules.xml
 /projectSettingsUpdater.xml
+/.idea.SpotifyOrganizer.iml
 /contentModel.xml
 # Editor-based HTTP Client requests
 /httpRequests/

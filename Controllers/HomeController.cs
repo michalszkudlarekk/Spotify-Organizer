@@ -4,6 +4,10 @@ using System.Diagnostics;
 
 namespace SpotifyOrganizer.Controllers
 {
+    /// <summary>
+    /// Class <c>HomeController</c> is responsible for handling requests related to
+    /// the application's home page and privacy policy. It includes three action methods: Index, Privacy, and Error. 
+    /// </summary>
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
