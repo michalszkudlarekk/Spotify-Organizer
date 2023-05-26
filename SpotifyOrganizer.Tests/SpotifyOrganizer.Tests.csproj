@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Spotify-Organizer\SpotifyOrganizer.csproj" />
       <ProjectReference Include="..\SpotifyOrganizer.csproj" />
+      <ProjectReference Include="..\SpotifyOrganizer\SpotifyOrganizer.csproj" />
     </ItemGroup>
 
     <ItemGroup>

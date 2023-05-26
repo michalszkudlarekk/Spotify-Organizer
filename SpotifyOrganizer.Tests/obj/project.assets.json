@@ -3770,7 +3770,6 @@
           "Microsoft.AspNetCore.Identity.UI": "7.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.4",
-          "Microsoft.NET.Test.Sdk": "17.6.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.5",
           "SpotifyAPI.Web": "7.0.0",
           "SpotifyAPI.Web.Auth": "7.0.0"
@@ -10283,12 +10282,14 @@
     },
     "SpotifyOrganizer/1.0.0": {
       "type": "project",
-      "path": "../SpotifyOrganizer.csproj",
-      "msbuildProject": "../SpotifyOrganizer.csproj"
+      "path": "../SpotifyOrganizer/SpotifyOrganizer.csproj",
+      "msbuildProject": "../SpotifyOrganizer/SpotifyOrganizer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj",
+      "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj",
       "Microsoft.NET.Test.Sdk >= 17.6.0",
       "Moq >= 4.18.4",
       "NUnit >= 3.13.3",
@@ -10303,11 +10304,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
+      "projectUniqueName": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
       "projectName": "SpotifyOrganizer.Tests",
-      "projectPath": "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
+      "projectPath": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
       "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-      "outputPath": "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.Tests\\obj\\",
+      "outputPath": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10328,11 +10329,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\SEM6\\spotify-organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj": {
-              "projectPath": "D:\\SEM6\\spotify-organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj"
+            "D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj": {
+              "projectPath": "D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj"
             },
-            "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.csproj": {
-              "projectPath": "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.csproj"
+            "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj": {
+              "projectPath": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj"
+            },
+            "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer\\SpotifyOrganizer.csproj": {
+              "projectPath": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer\\SpotifyOrganizer.csproj"
             }
           }
         }
@@ -10383,5 +10387,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

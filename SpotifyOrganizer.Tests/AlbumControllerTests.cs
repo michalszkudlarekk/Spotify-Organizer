@@ -35,5 +35,4 @@ public class AlbumControllerTests
         //Assert
         Assert.IsInstanceOf<IActionResult>(result);
         */
-    }
 }

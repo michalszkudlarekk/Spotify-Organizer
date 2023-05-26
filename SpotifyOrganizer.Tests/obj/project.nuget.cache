@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cilnwtGmTv76VR21xMMUAilfmVxNkSJq3PZerQbb0Vx4Jbhj16OjD3W/DH43YnP9b471LH2rf+dx5BHsqCDLOw==",
-  "success": true,
-  "projectFilePath": "D:\\SEM6\\spotify-organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
+  "dgSpecHash": "6ijQhe9d8ZKlJgBbuGOStSS0gqRtzkihe67jdNlXIGGuRMQk4WisbagO3rtc6Uvu3dM1xYIeHuYglulTk4i9DA==",
+  "success": false,
+  "projectFilePath": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.Tests\\SpotifyOrganizer.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -184,5 +184,24 @@
     "C:\\Users\\micha\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\unosquare.swan.lite\\3.1.0\\unosquare.swan.lite.3.1.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\c_ostry\\Spotify-Organizer\\Spotify-Organizer\\SpotifyOrganizer.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\c_ostry\\Spotify-Organizer\\SpotifyOrganizer.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
