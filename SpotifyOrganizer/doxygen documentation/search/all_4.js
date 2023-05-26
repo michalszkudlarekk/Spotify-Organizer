@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['addcontrollerswithviews_0',['AddControllersWithViews',['../_program_8cs.html#af8107f2f8ff8e8de22a684c8c8ad3e99',1,'Program.cs']]],
+  ['adddatabasedeveloperpageexceptionfilter_1',['AddDatabaseDeveloperPageExceptionFilter',['../_program_8cs.html#ae9ee4e6d7ca0f73335732ae4a52064d2',1,'Program.cs']]],
+  ['adddbcontext_3c_20applicationdbcontext_20_3e_2',['AddDbContext&lt; ApplicationDbContext &gt;',['../_program_8cs.html#ae8fa3e8f86604ab20a32c2ff9249957f',1,'Program.cs']]],
+  ['adddefaultidentity_3c_20identityuser_20_3e_3',['AddDefaultIdentity&lt; IdentityUser &gt;',['../_program_8cs.html#a4d47a15d774683f8255728efb17cff19',1,'Program.cs']]],
+  ['album_4',['Album',['../class_spotify_organizer_1_1_models_1_1_album_song.html#acceb215055b89d3e1938db5fb548943b',1,'SpotifyOrganizer.Models.AlbumSong.Album()'],['../class_spotify_organizer_1_1_models_1_1_user_album.html#a61fbc0970f0dddd314c7be0a40ffadbc',1,'SpotifyOrganizer.Models.UserAlbum.Album()'],['../class_spotify_organizer_1_1_models_1_1_album.html',1,'SpotifyOrganizer.Models.Album']]],
+  ['album_2ecs_5',['Album.cs',['../_album_8cs.html',1,'']]],
+  ['albumexists_6',['AlbumExists',['../class_spotify_organizer_1_1_controllers_1_1_albums_controller.html#ae25fc7c80c9a42ec49d415d4f1a63f07',1,'SpotifyOrganizer::Controllers::AlbumsController']]],
+  ['albumid_7',['AlbumId',['../class_spotify_organizer_1_1_models_1_1_album_song.html#a15ad5af851b5cc05a05762e89644bf99',1,'SpotifyOrganizer.Models.AlbumSong.AlbumId()'],['../class_spotify_organizer_1_1_models_1_1_user_album.html#a7fa79a1962742be74c561eb82d1f00fc',1,'SpotifyOrganizer.Models.UserAlbum.AlbumId()']]],
+  ['albumname_8',['AlbumName',['../class_spotify_organizer_1_1_models_1_1_album.html#af9223965c699ca9314ac8df2e8920175',1,'SpotifyOrganizer::Models::Album']]],
+  ['albums_9',['Albums',['../class_spotify_organizer_1_1_data_1_1_application_db_context.html#a05b54043d94839f260755e036599a03d',1,'SpotifyOrganizer::Data::ApplicationDbContext']]],
+  ['albumscontroller_10',['AlbumsController',['../class_spotify_organizer_1_1_controllers_1_1_albums_controller.html#ae54c2da018d3d3d1c7a31f75cedfb081',1,'SpotifyOrganizer.Controllers.AlbumsController.AlbumsController()'],['../class_spotify_organizer_1_1_controllers_1_1_albums_controller.html',1,'SpotifyOrganizer.Controllers.AlbumsController']]],
+  ['albumscontroller_2ecs_11',['AlbumsController.cs',['../_albums_controller_8cs.html',1,'']]],
+  ['albumsong_12',['AlbumSong',['../class_spotify_organizer_1_1_models_1_1_album_song.html',1,'SpotifyOrganizer::Models']]],
+  ['albumsong_2ecs_13',['AlbumSong.cs',['../_album_song_8cs.html',1,'']]],
+  ['albumsongexists_14',['AlbumSongExists',['../class_spotify_organizer_1_1_controllers_1_1_album_songs_controller.html#abb4e942bb2d85be739729ae1f1f82f2f',1,'SpotifyOrganizer::Controllers::AlbumSongsController']]],
+  ['albumsongs_15',['AlbumSongs',['../class_spotify_organizer_1_1_models_1_1_album.html#a0e235e5c1380705528e7f5c692c5394b',1,'SpotifyOrganizer.Models.Album.AlbumSongs()'],['../class_spotify_organizer_1_1_models_1_1_song.html#a14bdd5d616d8693db392e9122c2a849b',1,'SpotifyOrganizer.Models.Song.AlbumSongs()']]],
+  ['albumsongscontroller_16',['AlbumSongsController',['../class_spotify_organizer_1_1_controllers_1_1_album_songs_controller.html#adc253620d64d4bb203ab419f506fd29b',1,'SpotifyOrganizer.Controllers.AlbumSongsController.AlbumSongsController()'],['../class_spotify_organizer_1_1_controllers_1_1_album_songs_controller.html',1,'SpotifyOrganizer.Controllers.AlbumSongsController']]],
+  ['albumsongscontroller_2ecs_17',['AlbumSongsController.cs',['../_album_songs_controller_8cs.html',1,'']]],
+  ['albumssong_18',['AlbumsSong',['../class_spotify_organizer_1_1_data_1_1_application_db_context.html#aa126a3bc296f5881cbb8ca5a54f6cd2b',1,'SpotifyOrganizer::Data::ApplicationDbContext']]],
+  ['app_19',['app',['../_program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d',1,'Program.cs']]],
+  ['applicationdbcontext_20',['ApplicationDbContext',['../class_spotify_organizer_1_1_data_1_1_application_db_context.html#a6ef2f2acffde4523ad368537f26af3f7',1,'SpotifyOrganizer.Data.ApplicationDbContext.ApplicationDbContext()'],['../class_spotify_organizer_1_1_data_1_1_application_db_context.html',1,'SpotifyOrganizer.Data.ApplicationDbContext']]],
+  ['applicationdbcontext_2ecs_21',['ApplicationDbContext.cs',['../_application_db_context_8cs.html',1,'']]],
+  ['applicationdbcontextmodelsnapshot_22',['ApplicationDbContextModelSnapshot',['../class_spotify_organizer_1_1_data_1_1_migrations_1_1_application_db_context_model_snapshot.html',1,'SpotifyOrganizer::Data::Migrations']]],
+  ['applicationdbcontextmodelsnapshot_2ecs_23',['ApplicationDbContextModelSnapshot.cs',['../_application_db_context_model_snapshot_8cs.html',1,'']]],
+  ['artist_24',['Artist',['../class_spotify_organizer_1_1_models_1_1_song.html#a7648068bb84c989616a6ee5a280595c0',1,'SpotifyOrganizer::Models::Song']]]
+];
